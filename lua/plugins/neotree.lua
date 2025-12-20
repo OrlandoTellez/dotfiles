@@ -5,6 +5,11 @@ return {
     opts = {
       window = {
         position = "right",
+        width = 30,
+      },
+      filesystem = {
+        -- Esto asegura que el buffer se comporte de forma estándar
+        use_libuv_file_watcher = true,
       },
     },
   },
