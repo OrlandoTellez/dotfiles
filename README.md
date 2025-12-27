@@ -22,6 +22,7 @@ Verificamos igual la versión
     nvim --version
 
 ## Instalación de lazy vim:
+
 En caso de ser necesario eliminar caché vieja de anteriores intalaciones:
 
     mv ~/.config/nvim ~/.config/nvim.bak 2>/dev/null
