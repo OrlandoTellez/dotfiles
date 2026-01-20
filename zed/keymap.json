@@ -1,0 +1,55 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+//[
+//  {
+//    "context": "Workspace",
+//    "bindings": {
+//      // "shift shift": "file_finder::Toggle"
+//    },
+//  },
+//  {
+//    "context": "Editor && vim_mode == insert",
+//    "bindings": {
+//      // "j k": "vim::NormalBefore"
+//    },
+//  },
+//]
+
+[
+  {
+    // 1. Desde el Editor (Modo Normal): Espacio + h abre el panel
+    "context": "VimControl",
+    "bindings": {
+      "space h": "project_panel::ToggleFocus",
+      // Muestra el error/documentación (Hover) con g + L
+      "g l": "editor::Hover"
+    }
+  },
+  {
+    // 2. Dentro del Panel de Archivos
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      // Espacio + h para cerrar el panel y volver al código
+      "space h": "project_panel::ToggleFocus",
+
+      // --- Gestión de archivos (Estilo LazyVim/Neo-tree) ---
+      "a": "project_panel::NewFile", // Crear archivo
+      "shift-a": "project_panel::NewDirectory", // Crear carpeta
+      "d": "project_panel::Delete", // Borrar
+      "r": "project_panel::Rename", // Renombrar
+      "y": "project_panel::CopyRelativePath", // Copiar ruta
+      "enter": "project_panel::OpenPermanent", // Abrir archivo
+
+      // Navegación con hjkl
+      "h": "project_panel::CollapseSelectedEntry",
+      "l": "project_panel::ExpandSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious"
+    }
+  }
+]

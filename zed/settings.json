@@ -1,0 +1,63 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "Kaimandres",
+    "dark": "Kaimandres"
+  },
+  "format_on_save": "on",
+  "formatter": "language_server",
+  // 2. Configuración específica para RUST (Axum)
+  "languages": {
+    "Rust": {
+      "show_inlay_hints": true, // ¡Clave para ver tipos inferidos en Axum!
+      "tab_size": 4
+    },
+    // 3. Configuración para React/TS
+    "TypeScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true // Auto-fix de ESLint al guardar
+      }
+    },
+    "TSX": {
+      // Lo mismo para archivos .tsx
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    }
+  },
+  // 4. Mejoras visuales tipo Neovim
+  "scrollbar": {
+    "show": "never" // Si te gusta minimalista
+  }
+}
