@@ -1,0 +1,23 @@
+/* PONER TODO ESTO EN LA CARPETA .config/gtk-4.0 si no existe se crea */
+headerbar,
+.titlebar {
+  background-color: #000000;
+  color: #ffffff;
+} /* Tab bar de libadwaita */
+.tabbar,
+.tab-view,
+.tab-box,
+.adw-tab-bar,
+.adw-tab,
+.adw-tab-bar > box {
+  background-color: #000000;
+  color: #ffffff;
+} /* Tabs individuales */
+.adw-tab:selected,
+.adw-tab:checked {
+  background-color: #111111;
+  color: #ffffff;
+} /* Hover */
+.adw-tab:hover {
+  background-color: #1a1a1a;
+}
