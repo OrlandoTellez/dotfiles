@@ -1,0 +1,77 @@
+/* ==UserStyle==
+@name Dark DuckDuckGo 
+@namespace github.com/catppuccin/userstyles/styles/duckduckgo
+@version 1.0.0
+@description DuckDuckGo en negro puro OLED haciendo juego con tu ecosistema
+@author Gemini
+@preprocessor default
+==/UserStyle== */
+
+@-moz-document domain("duckduckgo.com") {
+    :root {
+        /* Tu Paleta OLED */
+        --text: #cdd6f4;
+        --subtext: #a6adc8;
+        --accent: #cba6f7;   /* Mauve de GitHub */
+        --wine-red: #5e1a1a; /* Tu Rojo Vino de WhatsApp */
+        --base: #050505;
+        --mantle: #010101;
+        --crust: #000000;
+        --surface0: #121212;
+
+        /* Mapeo de Variables de DuckDuckGo */
+        --theme-bg: #000000 !important;
+        --theme-main-bg: #000000 !important;
+        --theme-header-bg: #000000 !important;
+        --theme-sidebar-bg: var(--mantle) !important;
+        
+        /* Colores de Texto */
+        --theme-text: var(--text) !important;
+        --theme-link: var(--accent) !important;
+        --theme-link-visited: #94e2d5 !important; /* Teal para visitados */
+        --theme-url: var(--subtext) !important;
+        
+        /* Buscador y Botones */
+        --theme-search-bg: var(--surface0) !important;
+        --theme-search-border: #222 !important;
+        --theme-button-bg: var(--wine-red) !important; /* Botón de búsqueda en Rojo Vino */
+        --theme-button-text: #ffffff !important;
+    }
+
+    /* FORZADO OLED TOTAL */
+    body, 
+    .site-wrapper, 
+    .header-wrap,
+    .vertical--settings,
+    .modal-content {
+        background-color: #000000 !important;
+    }
+
+    /* Ajuste de los resultados de búsqueda */
+    .result {
+        background-color: transparent !important;
+        border-bottom: 1px solid #111 !important;
+    }
+
+    .result:hover {
+        background-color: var(--base) !important;
+    }
+
+    /* La caja de búsqueda principal */
+    .search--header, .search--home {
+        background-color: var(--surface0) !important;
+        border-radius: 8px !important;
+        border: 1px solid #222 !important;
+    }
+
+    /* El logo de DuckDuckGo (Opcional: puedes bajarle la opacidad para que no brille tanto) */
+    .logo-wrap--home, .header__logo {
+        filter: grayscale(1) brightness(0.8) !important;
+    }
+
+    /* Menús desplegables y ajustes */
+    .dropdown--settings, .modal__box {
+        background-color: var(--mantle) !important;
+        border: 1px solid var(--surface0) !important;
+    }
+}
