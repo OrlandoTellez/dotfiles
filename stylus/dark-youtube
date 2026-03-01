@@ -1,0 +1,79 @@
+/* ==UserStyle==
+@name Dark YouTube 
+@namespace github.com/catppuccin/userstyles/styles/youtube
+@version 1.0.0
+@description YouTube en negro puro OLED 
+@author Gemini
+@preprocessor default
+==/UserStyle== */
+
+@-moz-document domain("youtube.com") {
+    :root {
+        /* Tu Paleta OLED  */
+        --text: #cdd6f4;
+        --accent: #cba6f7; /* Mauve */
+        --base: #050505;   /* Negro casi puro para el fondo */
+        --mantle: #010101; /* Negro para barras laterales */
+        --crust: #000000;  /* Negro absoluto */
+        --surface0: #121212;
+        --surface1: #1a1a1a;
+
+        /* Mapeo de Variables de YouTube */
+        --yt-spec-base-background: #000000 !important;
+        --yt-spec-raised-background: var(--base) !important;
+        --yt-spec-general-background-a: var(--base) !important;
+        --yt-spec-general-background-b: var(--base) !important;
+        --yt-spec-menu-background: var(--surface0) !important;
+        
+        /* Texto */
+        --yt-spec-text-primary: var(--text) !important;
+        --yt-spec-text-secondary: #bac2de !important;
+        
+        /* Barra de búsqueda y elementos */
+        --ytd-searchbox-background: var(--mantle) !important;
+        --ytd-searchbox-legacy-border-color: var(--surface1) !important;
+        --ytd-searchbox-legacy-button-border-color: var(--surface1) !important;
+        
+        /* Acento (Botón de suscripción, links, etc) */
+        --yt-spec-call-to-action: var(--accent) !important;
+        --yt-spec-static-brand-red: var(--accent) !important; /* Cambia el rojo de YT por tu acento */
+    }
+
+    /* FORZADO OLED TOTAL */
+    ytd-app, 
+    ytd-masthead, 
+    #contentContainer, 
+    #page-manager, 
+    ytd-watch-flexy,
+    ytd-browse,
+    #columns {
+        background-color: #000000 !important;
+    }
+
+    /* Barra lateral izquierda */
+    #guide-content, ytd-guide-renderer {
+        background-color: var(--mantle) !important;
+    }
+
+    /* Miniaturas de videos y descripciones */
+    ytd-rich-grid-media, ytd-video-renderer {
+        background-color: transparent !important;
+    }
+
+    /* Quitar bordes brillantes */
+    ytd-active-item-renderer {
+        background-color: var(--surface0) !important;
+    }
+
+    /* El reproductor a veces tiene un fondo gris al cargar */
+    #player-container-outer, #player-container-inner {
+        background-color: #000 !important;
+    }
+
+    /* Botón de suscrito y otros botones */
+    #subscribe-button tp-yt-paper-button,
+    .yt-spec-button-shape-next--filled-black {
+        background-color: var(--surface1) !important;
+        color: var(--text) !important;
+    }
+}
